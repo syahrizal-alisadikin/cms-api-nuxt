@@ -71,4 +71,33 @@ Route::prefix('v1/web')->group(function () {
 
     //show tag
     Route::get('/tags/{slug}', [App\Http\Controllers\Api\Web\TagController::class, 'show']);
+    //index categories
+    Route::get('/categories', [App\Http\Controllers\Api\Web\CategoryController::class, 'index']);
+
+    //show category
+    Route::get('/categories/{slug}', [App\Http\Controllers\Api\Web\CategoryController::class, 'show']);
+
+    //categories sidebar
+    Route::get('/categorySidebar', [App\Http\Controllers\Api\Web\CategoryController::class, 'categorySidebar']);
+
+    //index posts
+    Route::get('/posts', [App\Http\Controllers\Api\Web\PostController::class, 'index']);
+
+    //show posts
+    Route::get('/posts/{slug}', [App\Http\Controllers\Api\Web\PostController::class, 'show']);
+
+    //posts homepage
+    Route::get('/postHomepage', [App\Http\Controllers\Api\Web\PostController::class, 'postHomepage']);
+
+    //store comment
+    Route::post('/posts/storeComment', [App\Http\Controllers\Api\Web\PostController::class, 'storeComment']);
+
+    //store image
+    Route::post('/posts/storeImage', [App\Http\Controllers\Api\Web\PostController::class, 'storeImagePost']);
+
+    //index menus
+    Route::get('/menus', [App\Http\Controllers\Api\Web\MenuController::class, 'index']);
+
+    //index sliders
+    Route::get('/sliders', [App\Http\Controllers\Api\Web\SliderController::class, 'index']);
 });
